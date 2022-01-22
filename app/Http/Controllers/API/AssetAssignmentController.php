@@ -101,13 +101,13 @@ class AssetAssignmentController extends Controller
     public function update(AssetAssignmentFormRequest $request, $id)
     {
         $assign = AssetAssignment::find($id);
-        $assign->asset_id = $request->asset_id,
-        $assign->assignment_date = $request->assignment_date,
-        $assign->status = $request->status,
-        $assign->is_due = $request->is_due,
-        $assign->due_date = $request->due_date,
-        $assign->assigned_user_id = $request->assigned_user_id,
-        $assign->assigned_by = $request->assigned_by,
+        $assign->asset_id = $request->asset_id;
+        $assign->assignment_date = $request->assignment_date;
+        $assign->status = $request->status;
+        $assign->is_due = $request->is_due;
+        $assign->due_date = $request->due_date;
+        $assign->assigned_user_id = $request->assigned_user_id;
+        $assign->assigned_by = $request->assigned_by;
         $assign->save();
 
         return response()->json([
@@ -130,6 +130,6 @@ class AssetAssignmentController extends Controller
             return response()->json([
                 'status' => 'success',
                 'message' => 'assign deleted successfully',
-            ])
+            ]);
     }
 }

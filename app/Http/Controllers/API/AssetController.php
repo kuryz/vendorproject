@@ -100,17 +100,17 @@ class AssetController extends Controller
     public function update(AssetFormRequest $request, $id)
     {
         $asset = Asset::find($id);
-        $asset->type = $request->type,
-        $asset->serial_number = $request->serial_number,
-        $asset->description = $request->description,
-        $asset->picture_path = $request->picture_path,
-        $asset->purchase_date = $request->purchase_date,
-        $asset->start_use_date = $request->start_use_date,
-        $asset->purchase_price = $request->purchase_price,
-        $asset->warranty_expiry_date = $request->warranty_expiry_date,
-        $asset->degradation = $request->degradation,
-        $asset->current_value = $request->current_value,
-        $asset->location = $request->location,
+        $asset->type = $request->type;
+        $asset->serial_number = $request->serial_number;
+        $asset->description = $request->description;
+        $asset->picture_path = $request->picture_path;
+        $asset->purchase_date = $request->purchase_date;
+        $asset->start_use_date = $request->start_use_date;
+        $asset->purchase_price = $request->purchase_price;
+        $asset->warranty_expiry_date = $request->warranty_expiry_date;
+        $asset->degradation = $request->degradation;
+        $asset->current_value = $request->current_value;
+        $asset->location = $request->location;
         $asset->save();
 
         return response()->json([
